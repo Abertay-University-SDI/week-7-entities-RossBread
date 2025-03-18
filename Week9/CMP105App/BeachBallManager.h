@@ -11,7 +11,7 @@ public:
 	void spawn();
 	void update(float dt);
 	void deathCheck();
-	void render(sf::RenderWindow* Window);
+	void render(sf::RenderWindow* window);
 
 private:
 	std::vector<Ball> balls;

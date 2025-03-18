@@ -1,4 +1,5 @@
 #include "BeachBallManager.h"
+#include <iostream>
 
 BeachBallManager::BeachBallManager()
 {
@@ -27,6 +28,8 @@ void BeachBallManager::update(float dt) {
 		}
 	}
 	deathCheck();
+
+	//std::cout << "size of balls vector: " << balls.size() << std::endl;
 }
 
 void BeachBallManager::spawn()
@@ -41,6 +44,15 @@ void BeachBallManager::spawn()
 			return;
 		}
 	}
+		// we havent returned the function, so everything in <balls> is alive 
+		// add another (probably not the best way to do this)
+
+		balls.push_back(Ball());
+		balls[balls.size() - 1].setAlive(true);
+		balls[balls.size() - 1].setVelocity(rand() % 200 - 100, rand() % 200 - 100);
+		balls[balls.size() - 1].setTexture(&texture);
+		balls[balls.size() - 1].setSize(sf::Vector2f(100, 100));
+		balls[balls.size() - 1].setPosition(spawnPoint);
 }
 
 void BeachBallManager::deathCheck()

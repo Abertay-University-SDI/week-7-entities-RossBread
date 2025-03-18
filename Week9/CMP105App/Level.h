@@ -4,6 +4,9 @@
 #include "Framework/BaseLevel.h"
 #include "Framework/Input.h"
 #include "BeachBallManager.h"
+#include "anotherManagerClass.h"
+#include "Player.h"
+#include "BulletManager.h"
 #include <string>
 #include <iostream>
 
@@ -19,6 +22,9 @@ public:
 
 private:
 	// Default variables for level class.
-	
+	Player player;
+
+	BulletManager bullet;
 	BeachBallManager ball;
+	anotherManagerClass enemy;
 };
