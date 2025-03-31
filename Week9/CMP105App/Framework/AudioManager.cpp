@@ -6,6 +6,13 @@ AudioManager::AudioManager()
 {
 	music.setLoop(true);
 	music.setVolume(50);
+
+	
+
+	addSound("sfx/click.wav", "click");
+
+	addMusic("sfx/monkey spinning.wav", "monkey");
+	
 }
 
 AudioManager::~AudioManager()

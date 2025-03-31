@@ -14,6 +14,7 @@ BulletManager::BulletManager()
 	//	return;
 	//}
 	
+
 }
 
 BulletManager::~BulletManager()
@@ -65,20 +66,29 @@ void BulletManager::update(float dt)
 	deathCheck();
 }
 
+void BulletManager::playNoise()
+{
+	audio.playSoundbyName("click");
+}
+
 void BulletManager::deathCheck() {
 	for (int i = 0; i < projectiles.size(); i++) {
 		if (projectiles[i].isAlive()) {
 			if (projectiles[i].getPosition().x < -100) {
 				projectiles[i].setAlive(false);
+				playNoise();
 			}
 			if (projectiles[i].getPosition().x > 800) {
 				projectiles[i].setAlive(false);
+				playNoise();
 			}
 			if (projectiles[i].getPosition().y < -100) {
 				projectiles[i].setAlive(false);
+				playNoise();
 			}
 			if (projectiles[i].getPosition().y > 600) {
 				projectiles[i].setAlive(false);
+				playNoise();
 			}
 		}
 	}

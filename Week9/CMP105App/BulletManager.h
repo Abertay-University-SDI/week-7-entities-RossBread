@@ -2,6 +2,7 @@
 #include "Framework/GameObject.h"
 #include "Bullet.h"
 #include "Player.h"
+#include "Framework/AudioManager.h"
 
 class BulletManager
 {
@@ -12,9 +13,13 @@ public:
 	void spawn(sf::Vector2f pos, sf::Vector2f cursorPos);
 
 	void update(float dt);
+
+	void playNoise();
+
 	void deathCheck();
 	void render(sf::RenderWindow* window);
 
+	AudioManager audio;
 private:
 	int bulletRenderCount;
 

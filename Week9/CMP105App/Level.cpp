@@ -9,6 +9,7 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 
 	player.setInput(input);
 
+	audio.playMusicbyName("monkey");
 }
 
 Level::~Level()
@@ -28,7 +29,6 @@ void Level::handleInput(float dt)
 	if (input->isPressed(sf::Keyboard::E)) {
 		enemy.spawn();
 	}
-
 	if (input->isLeftMousePressed()) {
 		bullet.spawn(player.getPosition(), sf::Vector2f(input->getMouseX(), input->getMouseY()));
 	}

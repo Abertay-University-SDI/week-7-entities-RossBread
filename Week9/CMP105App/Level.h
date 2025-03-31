@@ -9,6 +9,7 @@
 #include "BulletManager.h"
 #include <string>
 #include <iostream>
+#include "Framework/AudioManager.h"
 
 
 class Level : public BaseLevel{
@@ -27,4 +28,6 @@ private:
 	BulletManager bullet;
 	BeachBallManager ball;
 	anotherManagerClass enemy;
+
+	AudioManager audio;
 };
